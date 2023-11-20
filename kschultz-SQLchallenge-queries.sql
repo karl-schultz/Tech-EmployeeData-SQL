@@ -1,4 +1,4 @@
--- Empoyee salary
+-- Find the employee number, last name, first name, sex, and salary of each employee
 SELECT  emp.emp_no,
         emp.last_name,
         emp.first_name,
@@ -9,12 +9,12 @@ FROM employees as emp
     ON (emp.emp_no = sal.emp_no)
 ORDER BY emp.emp_no;
 
--- Hired in 1986
+-- Find the first name, last name, and hire date for the employees who were hired in 1986
 SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
--- Department managers
+-- Find manager of each department w/ dept number, dept name, emp number, last and first names
 SELECT  dm.dept_no,
         d.dept_name,
         dm.emp_no,
@@ -27,7 +27,7 @@ FROM dept_manager AS dm
         ON (dm.emp_no = e.emp_no);
 
 
--- Employee departments
+-- Find department number, employee number, last name, first name for each employee
 SELECT  e.emp_no,
         e.last_name,
         e.first_name,
@@ -39,13 +39,13 @@ FROM employees AS e
         ON (de.dept_no = d.dept_no)
 ORDER BY e.emp_no;
 
--- Employees whose first name is "Hercules" and last name begins with "B"
+-- Find employee whose first name is Hercules and whose last name begins with the letter 'B'
 SELECT first_name, last_name, birth_date, sex
 FROM employees
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
 
--- Sales employees
+-- Find each employee in the Sales department w/ employee number, last name, and first name
 SELECT  e.emp_no,
         e.last_name,
         e.first_name,
@@ -58,7 +58,8 @@ FROM employees AS e
 WHERE d.dept_name = 'Sales'
 ORDER BY e.emp_no;
 
--- Sales and development employees
+-- Find each employee in Sales and Development departments w/ emp numb, 
+-- last and first name, and department name 
 SELECT  e.emp_no,
         e.last_name,
         e.first_name,
@@ -71,7 +72,7 @@ FROM employees AS e
 WHERE d.dept_name IN ('Sales', 'Development')
 ORDER BY e.emp_no;
 
--- Count of last names
+-- Find the frequency counts, in descending order, of all the employee last names
 SELECT last_name, COUNT(last_name)
 FROM employees
 GROUP BY last_name
