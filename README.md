@@ -1,1 +1,1 @@
-# sql-challenge
+Karl Schultz's submission for Week 9 Challenge assignment for University of Oregon Data Analytics Bootcamp. To run this module create a new database in pgadmin4 and copy  and run the kschultz-SQL-challenge-schema.sql code into the query tool to create tables for the project. Then import the csv files from the data folder into the tables in the correct order (titles, employees, departments, dept_manager, dept_emp, salaries). From there you can run the queries by copying the kschults-SQLchallenge-queries.sql into the query tool.
